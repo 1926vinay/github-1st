@@ -1,4 +1,6 @@
- import java.io.*;
+1. JAVA PROGRAM TO PERFORM BASIC CALCULATOR OPERATIONS.
+
+import java.io.*;
 import java.lang.*;
 import java.lang.Math;
 import java.util.Scanner;
@@ -69,3 +71,334 @@ public class BasicCalculator {
                            + " = " + o);
     }
 }
+
+
+***************************************************************************************************************************
+2. JAVA PROGRAM TO CALCULATE FIBONACCI SERIES UP TO N NUMBERS
+
+package fibonacciseries;
+ 
+import java.util.*;
+ 
+public class FibonacciSeries {
+ 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        int first = 0;
+        int second = 1;
+        
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("How many elements you want to print in a Fibonacci series");
+        int n = in.nextInt();
+        
+        System.out.println("Fibonacci series");
+        System.out.print(first + " "+ second + " ");
+        
+        int next;
+ 
+        /*First two elements of a Fibonacci series is 0 and 1,
+          so we started a loop from index 2
+        */
+        for(int i = 2; i < n; i++) {
+            //next number is the sum of previous two numbers
+            next = first + second;
+            
+            System.out.print(next + " ");
+            
+            //previous two numbers assignment
+            first = second;
+            second = next;
+        }
+        
+    }
+    
+}
+
+
+**********************************************************************************************************************************************
+3. JAVA PROGRAM TO CALCULATE FACTORAIL OF A NUMBER
+
+public class Factorial {
+
+    public static void main(String[] args) {
+
+        int num = 10;
+        long factorial = 1;
+        for(int i = 1; i <= num; ++i)
+        {
+            // factorial = factorial * i;
+            factorial *= i;
+        }
+        System.out.printf("Factorial of %d = %d", num, factorial);
+    }
+}
+
+************************************************************************************************************************************************
+4. JAVA PROGRAM TO FIND OUT WHETHER THE GIVEN STRING IS PALINDROME OR NOT.
+
+import java.util.Scanner;
+ 
+class ChkPalindrome
+{
+   public static void main(String args[])
+   {
+      String str, rev = "";
+      Scanner sc = new Scanner(System.in);
+ 
+      System.out.println("Enter a string:");
+      str = sc.nextLine();
+ 
+      int length = str.length();
+ 
+      for ( int i = length - 1; i >= 0; i-- )
+         rev = rev + str.charAt(i);
+ 
+      if (str.equals(rev))
+         System.out.println(str+" is a palindrome");
+         else
+         System.out.println(str+" is not a palindrome");
+ 
+   }
+}
+
+************************************************************************************************************************************************
+5. JAVA PROGRAM TO CALCULATE PERMUTATION AND COMBINATION OF 2 NUMBERS.
+
+import java.util.Scanner;
+
+public class Main {
+
+    /**
+     * Utility functions for System.out.println() and System.out.print()
+     */
+    private static void print(String str) {
+        System.out.print(str);
+    }
+
+    private static void println(String str) {
+        System.out.println(str);
+    }
+ /**
+     * Find the factorial of a number
+     *
+     * @param n : number to find the factorial
+     * @return : factorial value of 'n'
+     */
+    public static int factorial(int n) {
+        //1
+        int fact = 1;
+        //2
+        for (int i = 1; i <= n; i++) {
+            //3
+            fact = fact * i;
+        }
+        //4
+         return fact;
+    }
+
+    public static void main(String args[]) {
+        int n, r;
+        Scanner scan = new Scanner(System.in);
+
+        println("To calculate the nCr and nPr values, we need 'n' and 'r' value .");
+
+        print("Enter the value of n : ");
+        n = scan.nextInt();
+
+        print("Enter the value of r : ");
+        r = scan.nextInt();
+        int ncr = (factorial(n) / (factorial(n - r) * factorial(r)));
+
+        int npr = (factorial(n) / (factorial(n - r)));
+
+        println("nPr is : " + npr);
+        println("nCr is : " + ncr);
+    }
+
+}
+
+*************************************************************************************************************************************************
+6. JAVA PROGRAM TO PRINT DIAMOND PATTERN.
+
+import java.util.Scanner;
+public class Diamond
+{
+    public static void main(String args[]) 
+    {
+        int n, i, j, space = 1;
+        System.out.print("Enter the number of rows: ");
+        Scanner s = new Scanner(System.in);
+        n = s.nextInt();
+        space = n - 1;
+        for (j = 1; j <= n; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space--;
+            for (i = 1; i <= 2 * j - 1; i++) 
+            {
+                System.out.print("*");                
+            }
+            System.out.println("");
+                }
+        space = 1;
+        for (j = 1; j <= n - 1; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space++;
+            for (i = 1; i <= 2 * (n - j) - 1; i++) 
+            {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+**********************************************************************************************************************************************
+7. JAVA PROGRAM TO REVERSE THE LETTERS PRESENT IN THE GIVEN STRING.
+
+package SimpleNumberPrograms;
+import java.util.Scanner;
+
+public class StringLettersReverse {
+	
+	private static Scanner sc;
+	
+	public static void main(String[] args) {
+		
+		String revStrWords;
+
+		sc= new Scanner(System.in);
+		
+		System.out.print("Enter String to Reverse its Letters =  ");
+		revStrWords = sc.nextLine();
+		
+		String[] strArray = revStrWords.split(" ");
+		
+		for(int i = 0; i < strArray.length; i++) 
+		{
+			char[] ch = strArray[i].toCharArray();
+			for(int j = ch.length - 1; j >= 0; j--) 
+			{
+				System.out.print(ch[j]);
+			}
+			System.out.print(" ");
+		}
+	}
+}
+
+********************************************************************************************************************************************
+
+8. JAVA PROGRAM TO CHECK WHETHER THE GIVEN ARRAY IS MIRROR INVERSE OR NOT.
+
+// Java implementation of the approach
+public class GFG {
+ 
+    // Function that returns true if
+    // the array is mirror-inverse
+    static boolean isMirrorInverse(int arr[])
+    {
+        for (int i = 0; i < arr.length; i++) {
+ 
+            // If condition fails for any element
+            if (arr[arr[i]] != i)
+                return false;
+        }
+ 
+        // Given array is mirror-inverse
+        return true;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+    int arr[] = { 1, 2, 3, 0 };
+        if (isMirrorInverse(arr))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+    }
+}
+
+*********************************************************************************************************************************************************
+9. JAVA PROGRAMS TO REMOVE ELEMENTS FROM AN ARRAY LIST.
+
+import java.util.ArrayList;  
+  
+public class RemoveMethod {  
+   public static void main(String[] args) {  
+      // creating an ArrayList having default size 5  
+      ArrayList<String> arr = new ArrayList<String>(5);  
+      // Adding elements to the ArrayList  
+      arr.add("Helen");  
+      arr.add("Paul");  
+      arr.add("Elanie");  
+      arr.add("Marco");  
+      System.out.println("The list of the size is: " + arr.size());  
+      // Showing all the elements in the ArrayList  
+      for (String name : arr) {  
+         System.out.println("Name is: " + name);  
+      }    
+      // Removing element available at position 1  
+      arr.remove(1);  
+      System.out.println("\nAfter removing the element the size of the ArrayList is: " + arr.size());  
+      // Showing all the elements in the ArrayList  
+      for (String name : arr) {  
+         System.out.println("Name is: " + name);  
+      }  
+   }  
+}  
+
+*****************************************************************************************************************************************************
+
+10. JAVA PROGRAM TO FIND THE TRANSPOSE OF A GIVEN MATRIX.
+
+public class Transpose    
+{    
+    public static void main(String[] args) {    
+        int rows, cols;    
+            
+        //Initialize matrix a    
+          int a[][] = {    
+                          {1, 2, 3},    
+                          {4, 5, 6},    
+                          {7, 8, 9}    
+                       };    
+              
+          //Calculates number of rows and columns present in given matrix    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        //Declare array t with reverse dimensions
+        public class Transpose    
+{    
+    public static void main(String[] args) {    
+        int rows, cols;    
+            
+        //Initialize matrix a    
+          int a[][] = {    
+                          {1, 2, 3},    
+                          {4, 5, 6},    
+                          {7, 8, 9}    
+                       };    
+              
+          //Calculates number of rows and columns present in given matrix    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        //Declare array t with reverse dimensions
+        }
+        }
+
+
+
